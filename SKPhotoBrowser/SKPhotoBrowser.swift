@@ -11,7 +11,7 @@ import UIKit
 public let SKPHOTO_LOADING_DID_END_NOTIFICATION = "photoLoadingDidEndNotification"
 
 // MARK: - SKPhotoBrowser
-open class SKPhotoBrowser: UIViewController {
+@objc open class SKPhotoBrowser: UIViewController {
     // open function
     open var currentPageIndex: Int = 0
     open var initPageIndex: Int = 0
@@ -53,7 +53,7 @@ open class SKPhotoBrowser: UIViewController {
     fileprivate var controlVisibilityTimer: Timer!
     
     // delegate
-    open weak var delegate: SKPhotoBrowserDelegate?
+    @objc open weak var delegate: SKPhotoBrowserDelegate?
 
     // statusbar initial state
     private var statusbarHidden: Bool = UIApplication.shared.isStatusBarHidden
@@ -85,7 +85,7 @@ open class SKPhotoBrowser: UIViewController {
         animator.senderViewForAnimation = animatedFromView
     }
     
-    public convenience init(photos: [SKPhotoProtocol], initialPageIndex: Int) {
+    @objc public convenience init(photos: [SKPhotoProtocol], initialPageIndex: Int) {
         self.init(nibName: nil, bundle: nil)
         self.photos = photos
         //self.photos.forEach { $0.checkCache() }

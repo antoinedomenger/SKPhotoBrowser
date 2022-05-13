@@ -18,7 +18,7 @@ import UIKit
 }
 
 // MARK: - SKPhoto
-open class SKPhoto: NSObject, SKPhotoProtocol {
+@objc open class SKPhoto: NSObject, SKPhotoProtocol {
     open var index: Int = 0
     open var underlyingImage: UIImage!
     open var caption: String?
@@ -130,7 +130,7 @@ open class SKPhoto: NSObject, SKPhotoProtocol {
 
 // MARK: - Static Function
 
-extension SKPhoto {
+@objc extension SKPhoto {
     public static func photoWithImage(_ image: UIImage) -> SKPhoto {
         return SKPhoto(image: image)
     }
